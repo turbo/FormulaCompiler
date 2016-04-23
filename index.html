@@ -1,1 +1,75 @@
-Whoopdy-friggin-doo.
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>The Formula Compiler</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/codemirror.css" />
+		<link rel="stylesheet" href="assets/css/mbo.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<div id="page-wrapper">
+			<header id="header" class="alt">
+				<h1><a href="index.html">Formula Compiler</a> by <a href="https://github.com/hlecter">@hlecter</a> and <a href="https://github.com/semitrivial">@semitrivial</a></h1>
+			</header>
+
+			<section id="banner">
+				<h2>$$\left ( \frac{\texttt {The Online}}{\text {Formula Compiler}} \right )$$</h2>
+				<ul class="actions">
+					<li><a href="#main" class="button special">Get Started</a></li>
+					<li><a href="https://github.com/hlecter/math" class="button">Read Sample Proof</a></a></li>
+				</ul>
+			</section>
+
+			<section id="main" class="container">
+				<section class="box">
+					<header class="major">
+						<h2>Step 1: Code</h2>
+						<p>The Formula Compiler is a compiler which finds mathematical formulas (involving only basic arithmetic and summation notation) for arbitrary computable functions. <br /><br /><a href="?src=function%20Fib(n)%0A10%20var%20x%0A20%20var%20y%0A30%20if%20n%20%3C%202%0A40%20return%201%0A50%20endif%0A60%20let%20x%20%3D%20Fib(abs(n-1))%0A70%20let%20y%20%3D%20Fib(abs(n-2))%0A80%20return%20x%2By#theform">Fibonacci Numbers</a>, <a href="?src=%2F%2FFind%20the%20nth%20prime%20using%20the%20Sieve%20of%20Eratosthenes%0Afunction%20P(n)%0A10%20var%20upperbound%0A20%20array%20Eratosthenes%0A30%20var%20x%0A40%20var%20y%0A50%20if%20n%3D0%0A60%20return%200%0A70%20endif%0A80%20let%20upperbound%3D2%5En%0A90%20let%20x%3D2%0A100%20if%20x%3C%3Dupperbound%0A110%20let%20y%3D2%0A120%20if%20y%3C%3Dupperbound%0A130%20let%20Eratosthenes%5Bx*y%5D%3D1%0A140%20let%20y%3Dy%2B1%0A150%20goto%20120%0A160%20endif%0A170%20let%20x%3Dx%2B1%0A180%20goto%20100%0A190%20endif%0A200%20let%20x%3D2%0A210%20let%20y%3D1%0A220%20if%20y%3Dn%0A230%20return%20x%0A240%20endif%0A250%20let%20x%3Dx%2B1%0A260%20if%20Eratosthenes%5Bx%5D%3D1%0A270%20goto%20250%0A280%20endif%0A290%20let%20y%3Dy%2B1%0A300%20goto%20220"><i>n</i>th Prime (Sieve)</a>, <a href="?src=function%20P(n)%0A10%20return%20prime(n)"><i>n</i>th Prime (built-in)</a>, <a href="?src=%2F%2FTwinPrime(n)%20shall%20return%20the%20lower%20member%20of%20the%20nth%20twin%20prime%20pair%0A%2F%2F(or%200%20if%20n%3D0%3B%202%20is%20not%20counted%20as%20a%20twin%20prime)%0A%2F%2FUndefined%20if%20there%20is%20no%20nth%20twin%20prime%20pair.%0Afunction%20TwinPrime(n)%0A10%20var%20x%0A20%20var%20y%0A30%20if%20n%3D0%0A40%20return%200%0A50%20endif%0A60%20let%20x%20%3D%201%0A70%20if%20isprime(prime(x)%2B2)%3D1%0A80%20let%20y%20%3D%20y%2B1%0A90%20if%20y%3Dn%0A100%20return%20prime(x)%0A110%20endif%0A120%20endif%0A130%20let%20x%20%3D%20x%2B1%0A140%20goto%2070"><i>n</i>th Twin-Prime</a>, <a href="?src=function%20Add(m%2Cn)%0A10%20return%20m%2Bn">Addition</a>, <a href="?src=function%20Fact(n)%0A10%20var%20x%0A20%20if%20n%3C2%0A30%20return%201%0A40%20endif%0A50%20let%20x%3DFact(abs(n-1))%0A60%20return%20x*n">Factorial</a>, <a href="?src=function%20Ack(m%2Cn)%0A10%20var%20x%0A20%20var%20y%0A30%20if%20m%3D0%0A40%20return%20n%2B1%0A50%20endif%0A60%20if%20n%3D0%0A70%20let%20x%3DAck(abs(m-1)%2C1)%0A80%20return%20x%0A90%20endif%0A100%20let%20x%3DAck(m%2Cabs(n-1))%0A110%20let%20y%3DAck(abs(m-1)%2Cx)%0A120%20return%20y">Ackermann</a>, <a href="?src=%2F%2FIf%20Goldbach's%20conjecture%20fails%2C%20output%20a%20counterexample.%0A%2F%2FLoop%20forever%20if%20Goldbach's%20conjecture%20is%20true.%0A%2F%2FThe%20input%20n%20is%20ignored.%0Afunction%20CheckGoldbach(n)%0A10%20var%20even%0A20%20var%20index1%0A30%20var%20index2%0A40%20let%20even%3D4%0A50%20let%20index1%3D1%0A60%20let%20index2%3D1%0A70%20if%20prime(index1)%2Bprime(index2)%3Deven%0A80%20let%20even%3Deven%2B2%0A90%20goto%2050%0A100%20endif%0A110%20let%20index2%3Dindex2%2B1%0A120%20if%20prime(index2)%20%3E%20even%0A130%20let%20index2%3D1%0A140%20let%20index1%3Dindex1%2B1%0A150%20if%20prime(index1)%20%3E%20even%0A160%20return%20even%0A170%20endif%0A180%20endif%0A190%20goto%2070">Goldbach's conjecture</a>.</p>
+					</header>
+					<br />
+					<span class=""><textarea id="pseudocode" name="pseudocode" rows="15">// Write your code here
+// Use BASIC-style manual line numbering and GOTOs
+// Look at the examples to learn the syntax and built-ins</textarea></span>
+				</section>
+				<section class="box" id="theform">
+					<header class="major">
+						<h2>Step 2: Formula</h2>
+						<p>The correct (albeit useless in practice) formula for your function.</p>
+					</header>
+					<br />
+					<div id="joutput" style="text-align:center">$$\textit {This section will update automatically.}$$</div>
+					<div id="loader" style="text-align:center"></div>
+				</section>
+				<section class="box">
+					<header class="major">
+						<h2>Step 3: Share!</h2>
+						<p>Copy the link below to share the current code and formula.</p>
+					</header>
+					<br />
+					<input style="text-align:center" type="text" id="permalink" readonly value="http://git.io/math" onClick="this.setSelectionRange(0, this.value.length)" />
+				</section>
+			</section>
+
+			<footer id="footer">
+				<ul class="copyright">
+					<li><a href="index.html">$$\left ( \frac{\texttt {The Online}}{\text {Formula Compiler}} \right )$$</a> by <a href="https://github.com/hlecter">@hlecter</a> and <a href="https://github.com/semitrivial">@semitrivial</a>. Design by <a href="http://html5up.net">HTML5 UP</a>. Banner picture by <a href="https://www.flickr.com/photos/doviende/">Pete</a>.</li>
+				</ul>
+			</footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrollgress.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/codemirror.js"></script>
+		<script type='text/javascript' src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+		<script type="text/x-mathjax-config">MathJax.Hub.Config({CommonHTML:{linebreaks:{automatic:true}},"HTML-CSS":{linebreaks:{automatic:true}},SVG:{linebreaks:{automatic:true}}});</script>
+		<script src="assets/js/simple.js"></script>
+	</body>
+</html>
