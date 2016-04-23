@@ -1,2 +1,1 @@
-# math
-Something awesome...
+# Try it now, at [git.io/math](http://git.io/math)!
