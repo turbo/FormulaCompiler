@@ -1,1 +1,1 @@
-# Try it now, at [git.io/math](http://git.io/math)!
+# Try it at [git.io/math](http://git.io/math)!
