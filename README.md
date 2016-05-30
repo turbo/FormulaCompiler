@@ -1,4 +1,4 @@
-### Try it now at [git.io/math](http://git.io/math)!
+### Try it now at [here](http://minxomat.github.io/FormulaCompiler)!
 
 -----
 
