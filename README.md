@@ -1,8 +1,8 @@
-### Try it now at [here](http://minxomat.github.io/FormulaCompiler)!
+### Try it now at [here](http://turbo.github.io/FormulaCompiler)!
 
 -----
 
-The [Formula Compiler](http://git.io/math) is a client-side compiler running on asm.js that finds mathematical formulas (involving only basic arithmetic and summation notation) for arbitrary computable functions written in pseudocode.
+The [Formula Compiler](http://turbo.github.io/FormulaCompiler) is a client-side compiler running on asm.js that finds mathematical formulas (involving only basic arithmetic and summation notation) for arbitrary computable functions written in pseudocode.
 
 Quote from Sam:
 
